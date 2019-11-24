@@ -103,6 +103,7 @@ function printQuote() {
     } else {
       document.querySelector('.year').innerHTML = 'unkown year';
     }
+    document.querySelector('.category').innerHTML = randomQuote.category;
   } else {
     throw new Error('getRandomQuote failed');
   }

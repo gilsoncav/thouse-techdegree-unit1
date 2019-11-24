@@ -65,13 +65,18 @@ h1 {
 
 .category {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 20px;
   color: #00c555;
   display: inline;
   padding: 5px 15px;
   align-self: flex-end;
   margin-bottom: 10px;
+  text-shadow: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .quote {
