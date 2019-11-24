@@ -82,7 +82,30 @@ function getRandomQuote() {
   return quotes[randI];
 }
 
-console.log(getRandomQuote());
+/**
+ * Auto change color mechanism
+ */
+var currentColor = {
+  r: 58,
+  g: 193,
+  b: 98,
+  variationAmount: 25
+};
+
+// Variates the color stored in currentColor by the amount stored
+// in currentColor.variationAmount.
+// It randomly chooses one of the Red Green or Blue color numbers to vary
+// Updates the background color of the body and the color of the category label
+function progressAndChangeColor() {
+  var wichColorAxisToChange = 'rgb'[Math.floor(Math.random() * 3)];
+  currentColor[wichColorAxisToChange] += currentColor.variationAmount;
+  currentColor[wichColorAxisToChange] %= 256;
+
+  var newColorText = `rgb(${currentColor.r},${currentColor.g},${currentColor.b})`;
+  document.body.style.backgroundColor = newColorText;
+  document.querySelector('.category').style.color = newColorText;
+  console.dir(currentColor);
+}
 
 /***
  * `printQuote` function
@@ -104,6 +127,7 @@ function printQuote() {
       document.querySelector('.year').innerHTML = 'unkown year';
     }
     document.querySelector('.category').innerHTML = randomQuote.category;
+    progressAndChangeColor();
   } else {
     throw new Error('getRandomQuote failed');
   }
