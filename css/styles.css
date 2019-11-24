@@ -53,11 +53,25 @@ h1 {
   max-width: 1024px;
   margin: auto;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
 }
 
 .quote-box {
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
   line-height: 0.5;
+}
+
+.category {
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #00c555;
+  display: inline;
+  padding: 5px 15px;
+  align-self: flex-end;
+  margin-bottom: 10px;
 }
 
 .quote {
