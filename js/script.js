@@ -45,7 +45,7 @@ var quotes = [
     source: 'Yuval Noah Harari',
     citation: 'SAPIENS',
     year: '2011',
-    category: 'intelectual'
+    category: 'intellectual'
   },
   {
     quote:
@@ -61,7 +61,7 @@ var quotes = [
     source: 'Arthur C Clarke',
     citation: 'Book, Profiles of the Future',
     year: '1962',
-    category: 'intelectual'
+    category: 'intellectual'
   }
 ];
 
