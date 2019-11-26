@@ -20,8 +20,8 @@ var quotes = [
   },
   {
     quote: 'I would never die for my beliefs, because i might be wrong',
-    source: 'Bertrand Russel',
-    citation: '',
+    source: 'Bertrand Russell',
+    citation: 'unknown',
     year: '1964',
     category: 'life'
   },
@@ -34,7 +34,7 @@ var quotes = [
   },
   {
     quote:
-      'You should keep a safety distance from those people who knows to code',
+      'You should keep a safety distance from those people who knows how to code',
     source: 'Gilson Cavalcanti',
     citation: 'While doing this exercise',
     year: '2019',
@@ -112,20 +112,17 @@ function progressAndChangeColor() {
  ***/
 function printQuote() {
   var randomQuote = getRandomQuote();
+  let htmlTemplate = '';
 
   if (randomQuote) {
-    document.querySelector('.quote').innerHTML = randomQuote.quote;
-    document.querySelector('.source-name').innerHTML = randomQuote.source;
-    if (randomQuote.citation) {
-      document.querySelector('.citation').innerHTML = randomQuote.citation;
-    } else {
-      document.querySelector('.citation').innerHTML = 'unkown citation';
-    }
-    if (randomQuote.year) {
-      document.querySelector('.year').innerHTML = randomQuote.year;
-    } else {
-      document.querySelector('.year').innerHTML = 'unkown year';
-    }
+    htmlTemplate += '<p class="quote">' + randomQuote.quote + '</p>';
+    htmlTemplate += '<p class="source">' + randomQuote.source;
+    htmlTemplate +=
+      '  <span class="citation">' + randomQuote.citation + '</span>';
+    htmlTemplate += '  <span class="year">' + randomQuote.year + '</span>';
+    htmlTemplate += '</p>';
+
+    document.getElementById('quote-box').innerHTML = htmlTemplate;
     document.querySelector('.category').innerHTML = randomQuote.category;
     progressAndChangeColor();
   } else {
@@ -144,7 +141,7 @@ printQuote();
 const kWaitTime = 5;
 var secondsToRefresh = kWaitTime;
 
-// creates an anonimous function to be called each 1 second...
+// creates an anonymous function to be called each 1 second...
 var timeoutID = window.setInterval(() => {
   secondsToRefresh--;
   if (secondsToRefresh === 0) {
